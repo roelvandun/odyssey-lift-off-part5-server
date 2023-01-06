@@ -40,10 +40,13 @@ const resolvers = {
     author: ({ authorId }, _, { dataSources }) => {
       return dataSources.trackAPI.getAuthor(authorId);
     },
-
     modules: ({ id }, _, { dataSources }) => {
       return dataSources.trackAPI.getTrackModules(id);
     },
+    lengthInSeconds: ({ length }) => length
+  },
+  Module: {
+    lengthInSeconds: ({ length }) => length
   },
 };
 
